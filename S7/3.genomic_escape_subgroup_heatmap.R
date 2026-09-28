@@ -112,14 +112,14 @@ heatmap.list=lapply(names(profile.escape.binarization), function(x){
     )
 
     tmp.matrix=scale(heatmap.data[, cell.types])
-    col_range=colorRamp2(c(min(tmp.matrix, na.rm=T), min(tmp.matrix, na.rm=T)/2, 0, max(tmp.matrix, na.rm=T)/2, max(tmp.matrix, na.rm=T)), c("# Prepare annotations and generate the heatmap.
+    col_range=colorRamp2(c(min(tmp.matrix, na.rm=T), min(tmp.matrix, na.rm=T)/2, 0, max(tmp.matrix, na.rm=T)/2, max(tmp.matrix, na.rm=T)), c("#3dccc7", "#93e1d8", "white", "#ef476f", "#8f2d56"))			# 创建热图的色键范围
     heatmap2=Heatmap(
-            t(tmp.matrix), name="Cell.infiltra",
-            show_column_names=FALSE,
-            cluster_columns=FALSE,
-            cluster_rows=FALSE,
-            show_column_dend=FALSE,
-            col=col_range)
+            t(tmp.matrix), name="Cell.infiltra",													# 图注的名称
+            show_column_names=FALSE, 
+            cluster_columns=FALSE, 
+            cluster_rows=FALSE, 
+            show_column_dend=FALSE, 
+            col=col_range)	
 
     combined_heatmap=Reduce(`%v%`, list(heatmap1, heatmap2))
 })
