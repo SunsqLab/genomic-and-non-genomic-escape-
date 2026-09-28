@@ -112,7 +112,7 @@ heatmap.list=lapply(names(profile.escape.binarization), function(x){
     )
 
     tmp.matrix=scale(heatmap.data[, cell.types])
-    col_range=colorRamp2(c(min(tmp.matrix, na.rm=T), min(tmp.matrix, na.rm=T)/2, 0, max(tmp.matrix, na.rm=T)/2, max(tmp.matrix, na.rm=T)), c("#3dccc7", "#93e1d8", "white", "#ef476f", "#8f2d56"))			# 创建热图的色键范围
+    col_range=colorRamp2(c(min(tmp.matrix, na.rm=T), min(tmp.matrix, na.rm=T)/2, 0, max(tmp.matrix, na.rm=T)/2, max(tmp.matrix, na.rm=T)), c("#3dccc7", "#93e1d8", "white", "#ef476f", "#8f2d56"))			
     heatmap2=Heatmap(
             t(tmp.matrix), name="Cell.infiltra",													
             show_column_names=FALSE, 
